@@ -65,6 +65,7 @@
 #include <cstddef>
 #include <limits>
 #include <vector>
+#include <boost/python.hpp>
 
 #include "Vector2.h"
 
@@ -214,6 +215,9 @@ namespace RVO {
 						size_t maxNeighbors, float timeHorizon,
 						float timeHorizonObst, float radius, float maxSpeed,
 						const Vector2 &velocity = Vector2());
+
+		//via http://stackoverflow.com/questions/3761391/boostpython-python-list-to-stdvector
+		size_t addObstacleFromPython(boost::python::list& ns);
 
 		/**
 		 * \brief      Adds a new obstacle to the simulation.

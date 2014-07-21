@@ -60,6 +60,8 @@
 #include "KdTree.h"
 #include "Obstacle.h"
 
+#include <iostream>
+
 #ifdef _OPENMP
 #include <omp.h>
 #endif
@@ -143,6 +145,18 @@ namespace RVO {
 		agents_.push_back(agent);
 
 		return agents_.size() - 1;
+	}
+
+	size_t RVOSimulator::addObstacleFromPython(boost::python::list& ns)
+	{
+		std::vector<RVO::Vector2> obs;
+		for (int i = 0; i < len(ns); ++i)
+	    {
+	    	RVO::Vector2 v=boost::python::extract<Vector2>(ns[i]);
+	    	// std::cout << "v.x=" << v.x() << ", v.y=" << v.y() << std::endl;
+	        obs.push_back(v);
+	    }
+	    return this->addObstacle(obs);
 	}
 
 	size_t RVOSimulator::addObstacle(const std::vector<Vector2> &vertices)

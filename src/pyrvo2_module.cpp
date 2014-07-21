@@ -39,6 +39,7 @@ namespace RVO {
             .def("addAgent0", &RVO::RVOSimulator::addAgent0)
             .def("addAgent1", &RVO::RVOSimulator::addAgent1)
             .def("addObstacle", &RVO::RVOSimulator::addObstacle)
+            .def("addObstacleFromPython", &RVO::RVOSimulator::addObstacleFromPython)
             .def("doStep", &RVO::RVOSimulator::doStep)
             .def("getAgentAgentNeighbor", &RVO::RVOSimulator::getAgentAgentNeighbor)
             .def("getAgentMaxNeighbors", &RVO::RVOSimulator::getAgentMaxNeighbors)
