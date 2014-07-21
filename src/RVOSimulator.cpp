@@ -101,7 +101,7 @@ namespace RVO {
 		delete kdTree_;
 	}
 
-	size_t RVOSimulator::addAgent(const Vector2 &position)
+	size_t RVOSimulator::addAgent0(const Vector2 &position)
 	{
 		if (defaultAgent_ == NULL) {
 			return RVO_ERROR;
@@ -125,7 +125,7 @@ namespace RVO {
 		return agents_.size() - 1;
 	}
 
-	size_t RVOSimulator::addAgent(const Vector2 &position, float neighborDist, size_t maxNeighbors, float timeHorizon, float timeHorizonObst, float radius, float maxSpeed, const Vector2 &velocity)
+	size_t RVOSimulator::addAgent1(const Vector2 &position, float neighborDist, size_t maxNeighbors, float timeHorizon, float timeHorizonObst, float radius, float maxSpeed, const Vector2 &velocity)
 	{
 		Agent *agent = new Agent(this);
 

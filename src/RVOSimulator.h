@@ -167,7 +167,7 @@ namespace RVO {
 		 * \return     The number of the agent, or RVO::RVO_ERROR when the agent
 		 *             defaults have not been set.
 		 */
-		size_t addAgent(const Vector2 &position);
+		size_t addAgent0(const Vector2 &position);
 
 		/**
 		 * \brief      Adds a new agent to the simulation.
@@ -210,7 +210,7 @@ namespace RVO {
 		 *                             of this agent (optional).
 		 * \return     The number of the agent.
 		 */
-		size_t addAgent(const Vector2 &position, float neighborDist,
+		size_t addAgent1(const Vector2 &position, float neighborDist,
 						size_t maxNeighbors, float timeHorizon,
 						float timeHorizonObst, float radius, float maxSpeed,
 						const Vector2 &velocity = Vector2());
